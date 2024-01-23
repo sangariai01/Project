@@ -6,26 +6,34 @@ class accessspecifier
 {
 protected:
     int a=10;
-
-private :
-    string Name = "VJsan" ;
-
 public:
     int print()
     {
         int b;
-       string word;
         b=a;
         cout << "THE GIVEN VALUE IS :" << b << endl;
-        word = Name;
-        cout << "The given name is : " << word << endl;
     }
 
+};
+class accsprdemo
+{
+    private :
+    string Name;
+    public:
+        int demo(string word)
+        {
+             Name = word;
+        cout << "The given name is : " << Name << endl;
+
+        }
 };
 
 int main()
 {
     accessspecifier as;
     as . print();
+    accsprdemo asd;
+    string word;
+    asd . demo ("san");
     return 0;
 }
