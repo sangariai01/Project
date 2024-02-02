@@ -15,25 +15,35 @@ int main()
     printf("-----------\n");*/
 
 
-  /*  char s[10] ="san";
-    printf("%s \n",s);
+    int main()
+{
+    char s[10] = "san" ;
+    printf(" %p \n", &s);
 
- char *p=&s;
-    printf("value of p                          : %s \t\n", p);
-    printf("address of p                        : %s \t\n", &p);
-    printf("value stored in the address of p    : %s \t\n", *p);
+printf("-----------\n");
+ char *p="san" ;
+    printf("value of p                          : %p \t\n", p);
+    printf("address of p                        : %p \t\n", &p);
+    printf("value stored in the address of p    : %s \t\n", p);
     printf("-----------\n");
+
 char **q=&p;
-    printf("value of p                          : %s \t\n", q);
-    printf("address of p                        : %s \t\n", &q);
-    printf("value stored in the address of p    : %s \t\n", *q);
+    printf("value of q                          : %p \t\n", q);
+    printf("address of q                        : %p \t\n", &q);
+    printf("value stored in the address of q    : %s \t\n", *q);
+    printf("-----------\n");
+
+char ***r=&q;
+    printf("value of r                         : %p \t\n", r);
+    printf("address of r                        : %p \t\n", &r);
+    printf("value stored in the address of r    : %s \t\n", **r);
     printf("-----------\n");
 
 
     return 0;
-}   */
+}
 
-int main()
+/*int main()
 {
     int a=10, b=20;
     printf("value of a      : %d \t\n", a);
@@ -65,6 +75,6 @@ int main()
     printf("value stored  in the address of s in the address of r to the address of q in the address of p    : %d \t\n", *(int*)s);
 
     return 0;
-}
+}*/
 
 
