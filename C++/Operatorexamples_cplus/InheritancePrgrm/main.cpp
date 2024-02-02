@@ -10,7 +10,7 @@ public:
     int details()
     {
         string name ="Sangari";
-        cout << "The name is :" << name << endl;
+        cout << "My dear " << name << endl;
 
     }
 
@@ -23,6 +23,7 @@ class resume : public biodata
 int main()
 {
     resume rs;
+    cout << rs . quotes << endl;
     rs . details();
     return 0;
 }

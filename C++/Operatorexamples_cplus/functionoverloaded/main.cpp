@@ -18,7 +18,7 @@ public:
     }
     ifelseprgrm(int a1)
     {
-        if(a1<10)
+        if(a1<=10)
         { ++a1;
             cout << "The number is : " << a1 << endl;
         }

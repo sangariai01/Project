@@ -36,7 +36,9 @@ public:
 
 int main()
 {    int a;
-    constructprgrm cp(3);
+     cout << "Enter the value :" << endl;
+     cin >> a ;
+    constructprgrm cp(a);
     int x,y;
     constructprgrm cp1(12,24);
     functoverprgm fop , fop1;
