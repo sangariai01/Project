@@ -1,10 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
-/*
+
 int main()
 {
-    int a = 5; int b;
-    printf("%d \n",a);
+ /*  printf("%d \n",a);
     printf("print the address : %d  %d\n" , &a ,&b);
     printf("print the size : %d\n" , sizeof(a));
 
@@ -15,25 +14,25 @@ int main()
     printf("-----------\n");*/
 
 
-  /*  char s[10] ="san";
-    printf("%s \n",s);
+   char s[10] ="san";
+    printf("%s \n",&s);
 
- char *p=&s;
-    printf("value of p                          : %s \t\n", p);
-    printf("address of p                        : %s \t\n", &p);
-    printf("value stored in the address of p    : %s \t\n", *p);
+ /*char *p=&s;
+    printf("value of p                          : %s  \t\n", p);
+   printf("address of p                        : %s  \t\n", &p);
+    //printf("value stored in the address of p    : %s \t\n", *p);
     printf("-----------\n");
-char **q=&p;
+/*char **q=&p;
     printf("value of p                          : %s \t\n", q);
     printf("address of p                        : %s \t\n", &q);
     printf("value stored in the address of p    : %s \t\n", *q);
-    printf("-----------\n");
+    printf("-----------\n");*/
 
 
     return 0;
-}   */
+}
 
-int main()
+/*int main()
 {
     int a=10, b=20;
     printf("value of a      : %d \t\n", a);
@@ -66,5 +65,5 @@ int main()
 
     return 0;
 }
-
+*/
 
