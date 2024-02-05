@@ -1,10 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
-/*
+
 int main()
 {
-    int a = 5; int b;
-    printf("%d \n",a);
+ /*  printf("%d \n",a);
     printf("print the address : %d  %d\n" , &a ,&b);
     printf("print the size : %d\n" , sizeof(a));
 
@@ -15,6 +14,21 @@ int main()
     printf("-----------\n");*/
 
 
+<<<<<<< HEAD
+   char s[10] ="san";
+    printf("%s \n",&s);
+
+ /*char *p=&s;
+    printf("value of p                          : %s  \t\n", p);
+   printf("address of p                        : %s  \t\n", &p);
+    //printf("value stored in the address of p    : %s \t\n", *p);
+    printf("-----------\n");
+/*char **q=&p;
+    printf("value of p                          : %s \t\n", q);
+    printf("address of p                        : %s \t\n", &q);
+    printf("value stored in the address of p    : %s \t\n", *q);
+    printf("-----------\n");*/
+=======
     int main()
 {
     char s[10] = "san" ;
@@ -38,6 +52,7 @@ char ***r=&q;
     printf("address of r                        : %p \t\n", &r);
     printf("value stored in the address of r    : %s \t\n", **r);
     printf("-----------\n");
+>>>>>>> e2adb25569b55a05515414e3cef174493de8dc48
 
 
     return 0;
@@ -75,6 +90,11 @@ char ***r=&q;
     printf("value stored  in the address of s in the address of r to the address of q in the address of p    : %d \t\n", *(int*)s);
 
     return 0;
+<<<<<<< HEAD
+}
+*/
+=======
 }*/
 
+>>>>>>> e2adb25569b55a05515414e3cef174493de8dc48
 
