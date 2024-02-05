@@ -10,11 +10,12 @@ int main()
     cout << "The address of the given string is : " << &project << endl;
     cout << "--------------------" << endl;
 
+
     string *a = &project;
-    printf("value of a                          : %p \t\n", a);
-    printf("address of a                        : %p \t\n", a);
-    printf("value stored in the address of a    : %s \t\n", *a);
-    printf("-----------\n");
+    cout << "value of a                          : %p \t\n" << a;
+    cout << "address of a                        : %p \t\n", *a);
+    cout << "value stored in the address of a    : %s \t\n", *a);
+    cout << "-----------\n");
 
     float f ;
     cout << "Enter the value " << endl;
@@ -25,13 +26,13 @@ int main()
 
     float *b = &f;
     printf("value of b                          : %p \t\n", b);
-    printf("address of b                        : %p \t\n", b);
+    printf("address of b                        : %p \t\n", *b);
     printf("value stored in the address of b    : %f \t\n", *b);
     printf("-----------\n");
 
     float **c = &b;
     printf("value of c                          : %p \t\n", c);
-    printf("address of c                        : %p \t\n", c);
+    printf("address of c                        : %p \t\n", *c);
     printf("value stored in the address of c    : %f \t\n", **c);
     printf("-----------\n");
 
