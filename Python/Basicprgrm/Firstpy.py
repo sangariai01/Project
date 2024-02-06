@@ -33,3 +33,38 @@ i="san"
 print(i);
 print(type(i));
 
+x = ["sangari","jaya","kayal"] #list
+print(x);
+print(type(x));
+
+x = ("sangari","jaya","kayal") #tuple
+print(x);
+print(type(x));
+
+x = {"sangari","jaya","kayal"} #set
+print(x);
+print(type(x));
+
+x = {("sangari","jaya","kayal")} #frozenset
+print(x);
+print(type(x));
+
+x = {"sangari" : "good_girl", "education" : "BE"} #dictonary
+print(x);
+print(type(x));
+
+a = ("cat","dog","cow") 
+(x,y,z) = a 
+print(x,y,z)
+		
+san="Hi sangari! You are a bold girl. You can do anything. Always be hope with your self"
+print(san);
+print(san.upper())
+print(san.lower())
+
+vj = " hi how ,   are you "
+print(vj.strip())
+
+roll_no = 35
+text = " Sangari Roll no is : "
+print(text.format(roll_no))
