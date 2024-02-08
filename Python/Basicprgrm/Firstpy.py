@@ -70,12 +70,18 @@ text = " Sangari Roll no is :{} "
 print(text.format(roll_no))
 '''
 
-x = {"COW" , "CAT" , "DOG" , "GOAT" , "HUMAN"}
+x = ["COW" , "CAT" , "DOG" , "GOAT" , "HUMAN"]
 print(x)
 print(type(x))
 print(len(x))
 for y in x :
-	print(y)
+	if y == "CAT":
+		continue
+	print(y);
+
+x[3] = "TIGER"
+print(x)
+
 
 
 
