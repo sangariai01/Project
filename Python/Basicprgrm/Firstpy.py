@@ -66,5 +66,5 @@ vj = " hi how ,   are you "
 print(vj.strip())
 
 roll_no = 35
-text = " Sangari Roll no is : "
+text = " Sangari Roll no is : {}"
 print(text.format(roll_no))
