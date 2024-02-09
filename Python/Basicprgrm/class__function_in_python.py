@@ -34,4 +34,17 @@ class famtree(fam):
 x=famtree("Marudhu","Mano","KVM","Sam","Lathu","San","Mahe")
 x.intro()
 
+class famsubtree(famtree):
+    def __init__(self, grandpaname, grandmaname, familyname,fathername,mothername,sonname,daughtername,grandsonname,granddaughtername):
+        self.gsn=grandsonname
+        self.gdn=granddaughtername
+        super().__init__(grandpaname, grandmaname, familyname,fathername,mothername,sonname,daughtername)
+        
+    def celebration(self):
+         print("Hi all..! I am",self.gfn,"and my wife",self.gmn,"Welcome you all to my",self.fn," family.I introduce my son Mr",self.ftn,"and his wife Mrs",self.mtn,"and also I am very glad to introduce my grandchildrens are Mr.",self.sn,"and Ms.",self.dn,"and my greatgrandchildrens are ",self.gsn,"and",self.gdn)
+        
+x=famsubtree("Marudhu","Mano","KVM","Sam","Lathu","San","Mahe","vsan","xmah")
+x.celebration()
+
+
        
