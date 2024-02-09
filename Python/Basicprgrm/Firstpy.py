@@ -27,7 +27,7 @@ if x<y :
 		print("z is greater than y")
 else :
 	print("Not applicabl")
-'''
+
                                                                                                                                                 
 i="san"
 print(i);
@@ -66,5 +66,20 @@ vj = " hi how ,   are you "
 print(vj.strip())
 
 roll_no = 35
+<<<<<<< HEAD
 text = " Sangari Roll no is : {}"
+=======
+text = " Sangari Roll no is :{} "
+>>>>>>> 7ee6ffa56b5cf2de87281f0a4d432d527929a69e
 print(text.format(roll_no))
+'''
+
+x = {"COW" , "CAT" , "DOG" , "GOAT" , "HUMAN"}
+print(x)
+print(type(x))
+print(len(x))
+for y in x :
+	print(y)
+
+
+
