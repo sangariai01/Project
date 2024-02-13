@@ -20,6 +20,11 @@ class drive(gmail):
         print("Welcome to google drive")
         super().chrome()
         super().account()
-y=drive()
+#y=drive()
+
+class photos(drive):
+     pass
+z=photos()
+
 
          

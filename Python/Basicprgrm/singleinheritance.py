@@ -10,7 +10,7 @@ class google():
     def translate(self):
         print("வணக்கம்")
 g=google()
-getpass.Chrome()
+g.Chrome()
 g.translate()
 
 class gmail(google):
