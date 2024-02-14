@@ -11,7 +11,7 @@ result.execute("show tables")
 result_show=result.fetchall()
 for x in result_show:
     print(x)
-result.execute("select * from sys_info")
+'''result.execute("select * from sys_info")
 result_show=result.fetchall()
 for x in result_show:
     print(x)
@@ -20,3 +20,4 @@ result.execute("select * from sys_info")
 result_show=result.fetchall()
 for x in result_show:
     print(x)
+'''

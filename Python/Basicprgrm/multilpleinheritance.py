@@ -12,6 +12,9 @@ class google():
 class microsoft():
     def __init__(self):
         print("Welcome to microsoft office")
+        super().__init__()
+        super().map()
+        super().files()      
     def word(self):
         print("Enter your word Document")
     def Excel(self):
@@ -22,11 +25,15 @@ class microsoft():
 
 class user(microsoft,google):
     def __int__(self):
-        super().map()
-        super().files()
         print("Welcome to the network world")
+        super().__init__()
+    def login(self):
+        print("Login your Id")
 
 u=user()
+u.word()
+u.Excel()
+u.login()
 
 
 
