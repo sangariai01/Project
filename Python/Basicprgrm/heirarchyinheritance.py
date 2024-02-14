@@ -1,49 +1,29 @@
 class google():
     def __init__(self):
-        print("Welcomr to google family")
-    def chrome(self):
-            print("Hi... Welcome to chrome")
-#g=google()
-#g.chrome()
-            
-class gmail(google):
-    def __init__(self):
-        print("Welcome to gmail")
-        super().chrome()
-    def account(self):
-        print("Log in your gmail account")
-#x=gmail()
-#x.account()
+        print("Welcome to google")
+    def login(self,user_id,password):
+        print("Your user_id is ",user_id,"and password is ",password)
+       
+#x=google()
+#x.login(user_id=input("Enter the user id:"),password=input("Enter the password:"))
 
-class drive(gmail):
+class microsoft(google):
     def __init__(self):
-        print("Welcome to google drive")
-        super().chrome()
-        super().account()
-#y=drive()
-
-class photos(drive):
-     pass
-z=photos()
-
-class microsoft():
-    def __init__(self):
-        print("Welcome to microsoft office")
+        print("Welcome to microsoft")
         super().__init__()
-        super().chrome()   
-    def word(self):
-        print("Enter your word Document")
-    def Excel(self):
-        print("Welcome to excel")
+        super().login()
+    def signin(self,user_name,pswd):
+        print("The given user name is",user_name,"and the password is",pswd)
+y=microsoft()
+y.signin(user_name=input("Enter the user name:"),pswd=input("Enter the pasword:"))
 
-class user(microsoft,google):
-    def __int__(self):
-        print("Welcome to the network world")
+class user(google):
+    def __init__(self):
         super().__init__()
-    def login(self):
-        print("Login your Id")
+        super().login()
+        pass
+z=user()
 
-u=user()
-u.word()
-u.Excel()
-u.login()
+
+
+
