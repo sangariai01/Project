@@ -11,7 +11,7 @@ class microsoft(google):
     def __init__(self):
         print("Welcome to microsoft")
         super().__init__()
-        super().login()
+        super().login(user_id=input("Enter the user id:"),password=input("Enter the password:"))
     def signin(self,user_name,pswd):
         print("The given user name is",user_name,"and the password is",pswd)
 y=microsoft()
@@ -20,7 +20,7 @@ y.signin(user_name=input("Enter the user name:"),pswd=input("Enter the pasword:"
 class user(google):
     def __init__(self):
         super().__init__()
-        super().login()
+        super().login(user_id=input("Enter the user id:"),password=input("Enter the password:"))
         pass
 z=user()
 
