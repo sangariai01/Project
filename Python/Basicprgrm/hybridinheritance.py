@@ -29,8 +29,7 @@ z=photos()
 class microsoft():
     def __init__(self):
         print("Welcome to microsoft office")
-        super().__init__()
-        super().chrome()   
+        super().__init__()  
     def word(self):
         print("Enter your word Document")
     def Excel(self):
@@ -47,3 +46,7 @@ u=user()
 u.word()
 u.Excel()
 u.login()
+
+class definition(microsoft):
+    pass
+d=definition()

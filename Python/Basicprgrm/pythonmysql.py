@@ -1,8 +1,8 @@
 import mysql.connector
 con=mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="Sangari@2024",
+    host="192.168.1.240",
+    user="AIBATCH01",
+    password="AI@123",
     database="ai_sangari"
 )
 print(con)
