@@ -1,12 +1,10 @@
-import calendar
-year=2024
-print(calendar.calendar(int(year)))
+
 
 from turtle import *
-bgcolor("blue")
+bgcolor("black")
 color("red")
 begin_fill()
-pensize(3)
+pensize(4)
 left(50)
 forward(133)
 circle(50,200)
