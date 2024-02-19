@@ -18,7 +18,7 @@ agevalue = StringVar
 gendervalue = StringVar
 phonevalue = StringVar
 qualificationvalue = StringVar
-
+checkvalue=IntVar
 nameentry = Entry(app, textvariable=namevalue).grid(row=1, column=3)
 agevalue = Entry(app, textvariable=agevalue).grid(row=2, column=3)
 gendervalue = Entry(app, textvariable=gendervalue).grid(row=3, column=3)
