@@ -8,9 +8,9 @@ app.config(bg="white")
 
 def Mydbconnection():
     con=mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="Sangari@2024",
+    host="192.168.1.240",
+    user="AIBATCH01",
+    password="AI@123",
     database="ai_sangari"
     )
     return con
@@ -39,59 +39,61 @@ def insertfun():
 def updatefun():
     Name=str(name.get())
     Tamil=int(mark1.get())
-    English=int(mark2.get())
-    Maths=int(mark3.get())
-    Science=int(mark4.get())
-    Social=int(mark5.get())
+    # English=int(mark2.get())
+    # Maths=int(mark3.get())
+    # Science=int(mark4.get())
+    # Social=int(mark5.get())
    
     
     e_con=Mydbconnection()
     result=e_con.cursor()
     
-    statement="update Student_details set Name= 'Name' where Sno=1 ;"
-    valuepass=(Name,Tamil,English,Maths,Science,Social)
+    statement="update Student_details set Name = (%s) where Sno = (%s) ;"
+    valuepass=(Name,Tamil)
     result.execute(statement,valuepass)
     e_con.commit()
     
     print(result.rowcount,"Value Updated")
 
 def deletefun():
+    pass    
     Name=str(name.get())
-    Tamil=int(mark1.get())
-    English=int(mark2.get())
-    Maths=int(mark3.get())
-    Science=int(mark4.get())
-    Social=int(mark5.get())
+    # Tamil=int(mark1.get())
+    # English=int(mark2.get())
+    # Maths=int(mark3.get())
+    # Science=int(mark4.get())
+    # Social=int(mark5.get())
    
     
     e_con=Mydbconnection()
     result=e_con.cursor()
     
-    statement=" delete from Student_details where Name='Name';"
-    valuepass=(Name,Tamil,English,Maths,Science,Social)
+    statement=" delete from Student_details where Name=(%s);"
+    valuepass=(Name,)
     result.execute(statement,valuepass)
     e_con.commit()
     
-    print(result.rowcount,"Value Updated")
+    print(result.rowcount,"row deleted")
 
-def resetfun():
-    Name=str(name.get())
-    Tamil=int(mark1.get())
-    English=int(mark2.get())
-    Maths=int(mark3.get())
-    Science=int(mark4.get())
-    Social=int(mark5.get())
+def alterfun():
+    pass
+    # Name=str(name.get())
+    # Tamil=int(mark1.get())
+    # English=int(mark2.get())
+    # Maths=int(mark3.get())
+    # Science=int(mark4.get())
+    # Social=int(mark5.get())
    
     
-    e_con=Mydbconnection()
-    result=e_con.cursor()
+    # e_con=Mydbconnection()
+    # result=e_con.cursor()
     
-    statement="update Student_details set Name= 'Name' where Sno=1 values(%s);"
-    valuepass=(Name,Tamil,English,Maths,Science,Social)
-    result.execute(statement,valuepass)
-    e_con.commit()
+    # statement="update Student_details set Name= 'Name' where Sno=1 values(%s);"
+    # valuepass=(Name,Tamil,English,Maths,Science,Social)
+    # result.execute(statement,valuepass)
+    # e_con.commit()
     
-    print(result.rowcount,"Value Updated")
+    # print(result.rowcount,"Value Updated")
 
 def submitfun():
     pass
@@ -145,7 +147,7 @@ mark5.grid(row=12,column=2)
 button1=Button(text="Insert",command=insertfun).grid(row=16,column=3)
 button2=Button(text="Update",command=updatefun).grid(row=16,column=4)
 button3=Button(text="Delete",command=deletefun).grid(row=16,column=5)
-button4=Button(text="Reset",command=resetfun).grid(row=16,column=6)
+button4=Button(text="ALTER",command=alterfun).grid(row=16,column=6)
 button5=Button(text="Submit",command=submitfun).grid(row=16,column=7)
 
 app.mainloop()
