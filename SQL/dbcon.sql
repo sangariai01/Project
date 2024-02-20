@@ -11,3 +11,4 @@ create table Student_details(Sno int auto_increment not null primary key ,
  Total int not null);
  
  select * from Student_details;
+ alter table Student_details drop column Total;
