@@ -55,8 +55,7 @@ def updatefun():
     
     print(result.rowcount,"Value Updated")
 
-def deletefun():
-    pass    
+def deletefun():  
     Name=str(name.get())
     # Tamil=int(mark1.get())
     # English=int(mark2.get())
@@ -76,24 +75,23 @@ def deletefun():
     print(result.rowcount,"row deleted")
 
 def alterfun():
-    pass
-    # Name=str(name.get())
+    Name=str(name.get())
     # Tamil=int(mark1.get())
     # English=int(mark2.get())
     # Maths=int(mark3.get())
     # Science=int(mark4.get())
     # Social=int(mark5.get())
    
+    e_con=Mydbconnection()
+    result=e_con.cursor()
     
-    # e_con=Mydbconnection()
-    # result=e_con.cursor()
+    statement="alter table Student_details drop column " + str(Name)+ ";"
+    # valuepass=(Name,)
+    result.execute(statement)
+    e_con.commit()
+    print(statement)
     
-    # statement="update Student_details set Name= 'Name' where Sno=1 values(%s);"
-    # valuepass=(Name,Tamil,English,Maths,Science,Social)
-    # result.execute(statement,valuepass)
-    # e_con.commit()
-    
-    # print(result.rowcount,"Value Updated")
+    print(result.rowcount,"Value Updated")
 
 def submitfun():
     pass
