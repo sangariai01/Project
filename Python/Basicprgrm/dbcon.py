@@ -8,9 +8,9 @@ app.config(bg="white")
 
 def Mydbconnection():
     con=mysql.connector.connect(
-    host="192.168.1.240",
-    user="AIBATCH01",
-    password="AI@123",
+    host="localhost",
+    user="root",
+    password="Sangari@2024",
     database="ai_sangari"
     )
     return con
@@ -76,8 +76,7 @@ def deletefun():
     print(result.rowcount,"row deleted")
 
 def alterfun():
-    pass
-    # Name=str(name.get())
+    Name=str(name.get())
     # Tamil=int(mark1.get())
     # English=int(mark2.get())
     # Maths=int(mark3.get())
@@ -85,15 +84,15 @@ def alterfun():
     # Social=int(mark5.get())
    
     
-    # e_con=Mydbconnection()
-    # result=e_con.cursor()
+    e_con=Mydbconnection()
+    result=e_con.cursor()
     
-    # statement="update Student_details set Name= 'Name' where Sno=1 values(%s);"
-    # valuepass=(Name,Tamil,English,Maths,Science,Social)
-    # result.execute(statement,valuepass)
-    # e_con.commit()
+    statement="alter table Student_details add column (%s) varchar(50);"
+    valuepass=(Name,)
+    result.execute(statement,valuepass)
+    e_con.commit()
     
-    # print(result.rowcount,"Value Updated")
+    print(result.rowcount,"Column altered")
 
 def submitfun():
     pass
