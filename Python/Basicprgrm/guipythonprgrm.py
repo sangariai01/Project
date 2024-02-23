@@ -6,41 +6,41 @@ win.geometry("600x600+500+100")
 win.config(bg="green")
 win.state("zoomed")
 
-def names():
-    fn=str(name1.get())
-    ln=str(name2.get())
-    fullname=fn+" "+ln
-    print(fullname)
-    labeloutput1.config(text=fullname)
+def __init__(self):
+        fn=str(name1.get())
+        ln=str(name2.get())
+        fullname=fn+" "+ln
+        print(fullname)
+        labeloutput1.config(text=fullname)
 
-def Add():
-    fn=int(name1.get())
-    ln=int(name2.get())
-    fullname=fn+ln
-    print(fullname)
-    labeloutput1.config(text=fullname)
+def Add(self):
+        fn=int(name1.get())
+        ln=int(name2.get())
+        fullname=fn+ln
+        print(fullname)
+        labeloutput1.config(text=fullname)
 
-def Sub():
-    fn=int(name1.get())
-    ln=int(name2.get())
-    fullname=fn-ln
-    print(fullname)
-    labeloutput1.config(text=fullname)
+def Sub(self):
+        fn=int(name1.get())
+        ln=int(name2.get())
+        fullname=fn-ln
+        print(fullname)
+        labeloutput1.config(text=fullname)
 
-def Multiple():
-    fn=int(name1.get())
-    ln=int(name2.get())
-    fullname=fn*ln
-    print(fullname)
-    labeloutput1.config(text=fullname)
+def Multiple(self):
+        fn=int(name1.get())
+        ln=int(name2.get())
+        fullname=fn*ln
+        print(fullname)
+        labeloutput1.config(text=fullname)
 
-def Divid():
-    fn=int(name1.get())
-    ln=int(name2.get())
-    fullname=fn/ln
-    print(fullname)
-    labeloutput1.config(text=fullname)
-  
+def Divid(self):
+        fn=int(name1.get())
+        ln=int(name2.get())
+        fullname=fn/ln
+        print(fullname)
+        labeloutput1.config(text=fullname)
+    
 lableTitle=Label(win,text="Concatinate Function",fg="red",font=("Algerian",18))
 lableTitle.grid(row=0,column=20,padx=150,pady=50)
 
