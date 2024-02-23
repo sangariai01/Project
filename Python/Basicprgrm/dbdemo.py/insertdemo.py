@@ -24,8 +24,8 @@ def insertfun(self):
     Social=int(mark5.get())
                                                 
                                                     
-    e_con=Mydbconnection()
-    result=e_con.cursor()
+    # e_con=Mydbconnection()
+    # result=e_con.cursor()
                                                     
     statement="insert into Student_details (Name,Tamil,English,Maths,Science,Social) values(%s,%s,%s,%s,%s,%s);"
     valuepass=(Name,Tamil,English,Maths,Science,Social)
