@@ -6,45 +6,14 @@ win=Tk()
 win.title("Insert into MySQL DB Demo")
 win.geometry("300x300")
 
-<<<<<<< HEAD
-def Mydbconnection():
-    con=mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="Sangari@2024",
-    database="ai_sangari"
-    )
-    return con                                                                                               
-
-def insertfun(self):
-    Name=str(name.get())
-    Tamil=int(mark1.get())
-    English=int(mark2.get())
-    Maths=int(mark3.get())
-    Science=int(mark4.get())
-    Social=int(mark5.get())
-                                                
-                                                    
-    # e_con=Mydbconnection()
-    # result=e_con.cursor()
-                                                    
-    statement="insert into Student_details (Name,Tamil,English,Maths,Science,Social) values(%s,%s,%s,%s,%s,%s);"
-    valuepass=(Name,Tamil,English,Maths,Science,Social)
-    result.execute(statement,valuepass)
-    e_con.commit()
-                                                    
-    print(result.rowcount,"row insert")
-        
-=======
 def Mydbconnection(self):
         con=mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="Sangari@2024",
+        host="192.168.1.240",
+        user="AIBATCH01",
+        password="AI@123",
         database="ai_sangari"
         )
         return con 
->>>>>>> 2013555a2a10f4a07e9f0f9c75feee71d4ea249e
 
 class frameDBoperations:
     def __init__(self):
@@ -118,7 +87,7 @@ class frameDBoperations:
         e_con=Mydbconnection(self)
         result=e_con.cursor()
                                                         
-        statement="insert into Student_details (Name,Tamil,English,Maths,Science,Social) values(%s,%s,%s,%s,%s,%s);"
+        statement="insert into Student_details (Name,Tamil,English,Maths,Science,Social) values(%s,%d,%d,%d,%d,%d);"
         valuepass=(Name,Tamil,English,Maths,Science,Social)
         result.execute(statement,valuepass)
         e_con.commit()
@@ -132,27 +101,3 @@ class frameDBoperations:
 run=frameDBoperations()
 win.mainloop()
 
-
-
-# from tkinter import *
-# import mysql.connector
-
-# win=Tk()
-
-# win.title("Insert into MySQL DB Demo")
-# win.geometry("500x500")
-
-# frameleft=Frame(win,bg="black",width=500,height=500,padx=30,pady=30)
-# frameleft.pack(side=LEFT)
-
-# frameright=Frame(win,bg="red",width=500,height=500)
-# frameright.pack(side=RIGHT)
-
-# lbl_Title_of_Operation=Label(frameleft,text="Insert into MySQL DB Demo")
-# lbl_Title_of_Operation.grid(row=0,columnspan=5)
-
-# lblName=Label(frameleft,text="Name")
-# lblName.grid(row=2,colunm=1,padx=30,pady=30)
-
-
-# win.mainloop()
