@@ -1,6 +1,8 @@
+import mysql.connector
+
 class DBManipulate():
     
-    def __init__(self):
+    def Mydbconnection(self):
         con = mysql.connector.connect(
         host="host",
         user="root",
@@ -8,8 +10,5 @@ class DBManipulate():
         database="ai_sangari"
         )
         return con  
-        print(con)
-        result=con.cursor()
-        result.execute("show tables")
-        for x in result_show:
-        print(x)
+      
+        

@@ -1,14 +1,14 @@
 import os
 from tkinter import *
 from tkinter import ttk
-# import mysql.connector
-# from subclassfun import DBManipulate
+import mysql.connector
+from subclassfun import DBManipulate
 
 win=Tk()
 win.title("Student Management System")
 win.geometry("500x500")
 # win.wm_iconbitmap('classfuns.ico')
-#dbcon=DBManipulate()
+dbcon=DBManipulate()
 
 def quit():
     win.destroy()
@@ -153,6 +153,22 @@ mark5.grid(row=12,column=2)
 
 btninsert=Button(titledisplayframeintab,text="Submit").grid(row=15,column=5)
 
+Name=name.get()
+Tamil=mark1.get()
+English=mark2.get()
+Maths=mark3.get()
+Science=mark4.get()
+Social=mark5.get()
+                                                                                                   
+result=dbcon.cursor()
+                                                        
+statement="insert into Student_details (Name,Tamil,English,Maths,Science,Social) values(%s,%d,%d,%d,%d,%d);"
+valuepass=(Name,Tamil,English,Maths,Science,Social)
+result.execute(statement,valuepass)
+dbcon.commit()
+                                                        
+print(result.rowcount,"row insert")
+
 titledisplayframeintab=Frame(tabUpdate,width=win.winfo_screenwidth(), height=win.winfo_screenheight())
 titledisplayframeintab.pack()
 
@@ -171,10 +187,24 @@ lableTamil.grid(row=4,column=1)
 mark1=Entry(titledisplayframeintab,width=10)
 mark1.grid(row=4,column=2)
 
+btnupdate=Button(titledisplayframeintab,text="Submit").grid(row=15,column=5)
+
 Name=name.get()
 Tamil=mark1.get()
 
+result=dbcon.cursor()
+                                                        
+statement="update Student_details set Name = (%s) where Sno = (%s) ;"
+valuepass=(Name,Tamil)
+result.execute(statement,valuepass)
+dbcon.commit()
+
+print(result.rowcount,"row updated")
+
 btnupdate=Button(titledisplayframeintab,text="Submit").grid(row=15,column=5)
+
+Name=name.get()
+Tamil=mark1.get()
 
 titledisplayframeintab=Frame(tabDelete,width=win.winfo_screenwidth(), height=win.winfo_screenheight())
 titledisplayframeintab.pack()
@@ -189,8 +219,19 @@ name.grid(row=2,column=2)
 
 btndelete=Button(titledisplayframeintab,text="Submit").grid(row=15,column=5)
 
-# msg=dbcon.Mydbconnection()
-# lblConMsg=Label(titledisplayframeintab, text=msg)
-# lblConMsg.grid(row=8,column=2, pady=20)
+Name=name.get()
+
+result=dbcon.cursor()
+                                                        
+statement=" delete from Student_details where Name=(%s);"
+valuepass=(Name,)
+result.execute(statement,valuepass)
+dbcon.commit()
+
+print(result.rowcount,"row deleted")
+
+msg=dbcon.Mydbconnection()
+lblConMsg=Label(titledisplayframeintab, text=msg)
+lblConMsg.grid(row=8,column=2, pady=20)
 
 win.mainloop()

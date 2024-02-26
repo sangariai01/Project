@@ -1,7 +1,7 @@
 import os
 from tkinter import *
 from tkinter import ttk
-# import mysql.connector
+import mysql.connector
 from classfun import DBManipulate
 
 win=Tk()
