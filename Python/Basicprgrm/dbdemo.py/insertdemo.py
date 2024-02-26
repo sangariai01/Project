@@ -1,19 +1,21 @@
+import os
 from tkinter import *
-import mysql.connector
+from tkinter import ttk
+# import mysql.connector
+from classfun import DBManipulate
 
 win=Tk()
-
-win.title("Insert into MySQL DB Demo")
-win.geometry("300x300")
-
+win.title("Student Management System")
+win.geometry("500x500")
 def Mydbconnection(self):
-        con=mysql.connector.connect(
-        host="192.168.1.240",
-        user="AIBATCH01",
-        password="AI@123",
-        database="ai_sangari"
-        )
-        return con 
+    con=mysql.connector.connect(
+    host="192.168.1.240",
+    user="AIBATCH01",
+    password="AI@123",
+    database="ai_sangari"
+    )
+    return con  
+
 
 class frameDBoperations:
     def __init__(self):
@@ -72,9 +74,6 @@ class frameDBoperations:
 
         mark5=Entry(frameinsert,width=10)
         mark5.grid(row=12,column=2)
-        
-
-
         
         Name=name.get()
         Tamil=mark1.get()
