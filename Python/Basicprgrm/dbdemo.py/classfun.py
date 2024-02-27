@@ -39,6 +39,19 @@ def about():
     abt.pack()
     win.mainloop()
     
+def insertfun():
+    
+    Name=str(name.get())
+    Tamil=str(mark1.get())
+    English=str(mark2.get())
+    Maths=str(mark3.get())
+    Science=str(mark4.get())
+    Social=str(mark5.get())
+                                                                                                   
+    x=dbcon.insertvalues(Name,Tamil,English,Maths,Science,Social)
+    lblConMsg.config(text=x)
+    
+    
 
 menubar=Menu(win)
 
@@ -151,23 +164,7 @@ lableSocial.grid(row=12,column=1)
 mark5=Entry(titledisplayframeintab,width=10)
 mark5.grid(row=12,column=2)
 
-btninsert=Button(titledisplayframeintab,text="Submit").grid(row=15,column=5)
-
-Name=name.get()
-Tamil=mark1.get()
-English=mark2.get()
-Maths=mark3.get()
-Science=mark4.get()
-Social=mark5.get()
-                                                                                                   
-result=dbcon.cursor()
-                                                        
-statement="insert into Student_details (Name,Tamil,English,Maths,Science,Social) values(%s,%d,%d,%d,%d,%d);"
-valuepass=(Name,Tamil,English,Maths,Science,Social)
-result.execute(statement,valuepass)
-dbcon.commit()
-                                                        
-print(result.rowcount,"row insert")
+btninsert=Button(titledisplayframeintab,text="Submit",command=insertfun).grid(row=15,column=5)
 
 titledisplayframeintab=Frame(tabUpdate,width=win.winfo_screenwidth(), height=win.winfo_screenheight())
 titledisplayframeintab.pack()
@@ -189,23 +186,6 @@ mark1.grid(row=4,column=2)
 
 btnupdate=Button(titledisplayframeintab,text="Submit").grid(row=15,column=5)
 
-Name=name.get()
-Tamil=mark1.get()
-
-result=dbcon.cursor()
-                                                        
-statement="update Student_details set Name = (%s) where Sno = (%s) ;"
-valuepass=(Name,Tamil)
-result.execute(statement,valuepass)
-dbcon.commit()
-
-print(result.rowcount,"row updated")
-
-btnupdate=Button(titledisplayframeintab,text="Submit").grid(row=15,column=5)
-
-Name=name.get()
-Tamil=mark1.get()
-
 titledisplayframeintab=Frame(tabDelete,width=win.winfo_screenwidth(), height=win.winfo_screenheight())
 titledisplayframeintab.pack()
 
@@ -218,17 +198,6 @@ name=Entry(titledisplayframeintab,width=10)
 name.grid(row=2,column=2)
 
 btndelete=Button(titledisplayframeintab,text="Submit").grid(row=15,column=5)
-
-Name=name.get()
-
-result=dbcon.cursor()
-                                                        
-statement=" delete from Student_details where Name=(%s);"
-valuepass=(Name,)
-result.execute(statement,valuepass)
-dbcon.commit()
-
-print(result.rowcount,"row deleted")
 
 msg=dbcon.Mydbconnection()
 lblConMsg=Label(titledisplayframeintab, text=msg)
