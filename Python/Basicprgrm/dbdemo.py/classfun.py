@@ -39,6 +39,19 @@ def about():
     abt.pack()
     win.mainloop()
     
+def insertfun():
+    
+    Name1=str(name2.get())
+    Tamil_mrk=str(markTam.get())
+    English=str(markEng.get())
+    Maths=str(markMat.get())
+    Science=str(markSci.get())
+    Social=str(markSoc.get())
+                                                                                                   
+    x=dbcon.insertvalues(Name1,Tamil_mrk,English,Maths,Science,Social)
+    lblConMsg.config(text=x)
+    
+    
 
 menubar=Menu(win)
 
@@ -118,56 +131,40 @@ lbl_insertTitle.grid(pady=10,row=0, columnspan=10)
 lablename=Label(titledisplayframeintab,text="Student_Name")
 lablename.grid(row=2,column=1)
 
-name=Entry(titledisplayframeintab,width=10)
-name.grid(row=2,column=2)
+name2=Entry(titledisplayframeintab,width=10)
+name2.grid(row=2,column=2)
 
 lableTamil=Label(titledisplayframeintab,text="Tamil")
 lableTamil.grid(row=4,column=1)
 
-mark1=Entry(titledisplayframeintab,width=10)
-mark1.grid(row=4,column=2)
+markTam=Entry(titledisplayframeintab,width=10)
+markTam.grid(row=4,column=2)
 
 lableEnglish=Label(titledisplayframeintab,text="English")
 lableEnglish.grid(row=6,column=1)
 
-mark2=Entry(titledisplayframeintab,width=10)
-mark2.grid(row=6,column=2)
+markEng=Entry(titledisplayframeintab,width=10)
+markEng.grid(row=6,column=2)
 
 lableMaths=Label(titledisplayframeintab,text="Maths")
 lableMaths.grid(row=8,column=1)
 
-mark3=Entry(titledisplayframeintab,width=10)
-mark3.grid(row=8,column=2)
+markMat=Entry(titledisplayframeintab,width=10)
+markMat.grid(row=8,column=2)
 
 lableScience=Label(titledisplayframeintab,text="Science")
 lableScience.grid(row=10,column=1)
 
-mark4=Entry(titledisplayframeintab,width=10)
-mark4.grid(row=10,column=2)
+markSci=Entry(titledisplayframeintab,width=10)
+markSci.grid(row=10,column=2)
 
 lableSocial=Label(titledisplayframeintab,text="Social")
 lableSocial.grid(row=12,column=1)
 
-mark5=Entry(titledisplayframeintab,width=10)
-mark5.grid(row=12,column=2)
+markSoc=Entry(titledisplayframeintab,width=10)
+markSoc.grid(row=12,column=2)
 
-btninsert=Button(titledisplayframeintab,text="Submit").grid(row=15,column=5)
-
-Name=name.get()
-Tamil=mark1.get()
-English=mark2.get()
-Maths=mark3.get()
-Science=mark4.get()
-Social=mark5.get()
-                                                                                                   
-result=dbcon.cursor()
-                                                        
-statement="insert into Student_details (Name,Tamil,English,Maths,Science,Social) values(%s,%d,%d,%d,%d,%d);"
-valuepass=(Name,Tamil,English,Maths,Science,Social)
-result.execute(statement,valuepass)
-dbcon.commit()
-                                                        
-print(result.rowcount,"row insert")
+btninsert=Button(titledisplayframeintab,text="Submit",command=insertfun).grid(row=15,column=5)
 
 titledisplayframeintab=Frame(tabUpdate,width=win.winfo_screenwidth(), height=win.winfo_screenheight())
 titledisplayframeintab.pack()
@@ -189,23 +186,6 @@ mark1.grid(row=4,column=2)
 
 btnupdate=Button(titledisplayframeintab,text="Submit").grid(row=15,column=5)
 
-Name=name.get()
-Tamil=mark1.get()
-
-result=dbcon.cursor()
-                                                        
-statement="update Student_details set Name = (%s) where Sno = (%s) ;"
-valuepass=(Name,Tamil)
-result.execute(statement,valuepass)
-dbcon.commit()
-
-print(result.rowcount,"row updated")
-
-btnupdate=Button(titledisplayframeintab,text="Submit").grid(row=15,column=5)
-
-Name=name.get()
-Tamil=mark1.get()
-
 titledisplayframeintab=Frame(tabDelete,width=win.winfo_screenwidth(), height=win.winfo_screenheight())
 titledisplayframeintab.pack()
 
@@ -218,17 +198,6 @@ name=Entry(titledisplayframeintab,width=10)
 name.grid(row=2,column=2)
 
 btndelete=Button(titledisplayframeintab,text="Submit").grid(row=15,column=5)
-
-Name=name.get()
-
-result=dbcon.cursor()
-                                                        
-statement=" delete from Student_details where Name=(%s);"
-valuepass=(Name,)
-result.execute(statement,valuepass)
-dbcon.commit()
-
-print(result.rowcount,"row deleted")
 
 msg=dbcon.Mydbconnection()
 lblConMsg=Label(titledisplayframeintab, text=msg)
