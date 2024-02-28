@@ -22,14 +22,45 @@ class DBManipulate():
         data=self.Mydbconnection()
         result=data.cursor()
 
-        statement="insert into Student_details (Name,Tamil,English,Maths,Science,Social) values(%s,%s,%s,%s,%s,%s);"
-        valuepass=(Name,Tamil,English,Maths,Science,Social)
-        result.execute(statement,valuepass)
-        print(statement)
+        stmts="INSERT INTO student_details (Name, Tamil, English, Maths, Science, Social) VALUES ( "+ '"' + Name + '"' + "," + str(Tamil) + "," + str(English)+","+ str(Maths)  +","+ str(Science) +","+ str(Social) + ");"
+        
+        result.execute(stmts)
+        print(stmts)
+
+       
+        data.commit()
+
+        return (str(result.rowcount) + " row inserted")
+    
+    def updatevalues(self,st_name,tamil):  
+        Name=st_name
+        Tamil=tamil
       
+        data1=self.Mydbconnection()
+        result=data1.cursor()
 
+        statement="update Student_details set Name = ("+'"'+Name+'"'+") where Sno = ("+str(Tamil)+") ;"
+        result.execute(statement)
+        print(statement)
 
+       
+        data1.commit()
 
-        # data.commit()
+        return (str(result.rowcount) + " row updated")
+    
+    
+    def deletevalues(self,st_name):  
+        
+        Name=st_name
+        data2=self.Mydbconnection()
+        result=data2.cursor()
 
-        # return (str(result.rowcount) + " row inserted")
+        statement="delete from Student_details where Name = ("+'"'+Name+'"'+") ;"
+        result.execute(statement)
+        print(statement)
+
+       
+        data2.commit()
+
+        return (str(result.rowcount) + " row deleted")
+    
