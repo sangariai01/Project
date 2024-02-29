@@ -7,7 +7,11 @@ from subclassfun import DBManipulate
 win=Tk()
 win.title("Student Management System")
 win.geometry("500x500")
-# win.wm_iconbitmap('classfuns.ico')
+
+imgdir1=os.path.join(os.path.dirname(__file__),'img')
+imageicolocation=os.path.join(imgdir1,'sms.ico')
+win.wm_iconbitmap(imageicolocation)
+
 dbcon=DBManipulate()
 
 def quit():
@@ -50,6 +54,20 @@ def insertfun():
                                                                                                    
     x=dbcon.insertvalues(Name1,Tamil_mrk,English,Maths,Science,Social)
     lblConMsg.config(text=x)
+    
+def updatefun():
+    Name2=str(name3.get())
+    Tamil_mark=str(markTamil.get()) 
+    
+    y=dbcon.updatevalues(Name2,Tamil_mark)
+    lblConMsg.config(text=y)  
+    
+def deletefun():
+    Name3=str(name4.get())
+   
+    
+    z=dbcon.deletevalues(Name3,)
+    lblConMsg.config(text=z)  
     
     
 
@@ -100,11 +118,12 @@ helpmenu.add_command(label="About Notepad",command=about,underline=0)
 
 win.config(menu=menubar)
 
-# imgdir=os.path.join(os.path.dirname(__file__),'img')
-# getTitleImage=PhotoImage('titleimage',file=os.path.join(imgdir,'poster.gif'))
+imgdir=os.path.join(os.path.dirname(__file__),'img')
+getTitleImage=PhotoImage('titleimage',file=os.path.join(imgdir,'poster.gif'))
 
 titleImageFrame=Frame(win, bg="black")
 titleImageFrame.pack(padx=10,fill="x")
+lblDisplayTitleImage=Label(titleImageFrame,image=getTitleImage).pack(padx=10,fill="x")
 
 tablist=ttk.Notebook(win)
 tablist.pack(padx=10, pady=5)
@@ -166,6 +185,10 @@ markSoc.grid(row=12,column=2)
 
 btninsert=Button(titledisplayframeintab,text="Submit",command=insertfun).grid(row=15,column=5)
 
+msg=dbcon.Mydbconnection()
+lblConMsg=Label(titledisplayframeintab, text=msg)
+lblConMsg.grid(row=15,column=2, pady=20)
+
 titledisplayframeintab=Frame(tabUpdate,width=win.winfo_screenwidth(), height=win.winfo_screenheight())
 titledisplayframeintab.pack()
 
@@ -175,16 +198,20 @@ lbl_updateTitle.grid(pady=10,row=0, columnspan=10)
 lablename=Label(titledisplayframeintab,text="Student_Name")
 lablename.grid(row=2,column=1)
 
-name=Entry(titledisplayframeintab,width=10)
-name.grid(row=2,column=2)
+name3=Entry(titledisplayframeintab,width=10)
+name3.grid(row=2,column=2)
 
 lableTamil=Label(titledisplayframeintab,text="Condition")
 lableTamil.grid(row=4,column=1)
 
-mark1=Entry(titledisplayframeintab,width=10)
-mark1.grid(row=4,column=2)
+markTamil=Entry(titledisplayframeintab,width=10)
+markTamil.grid(row=4,column=2)
 
-btnupdate=Button(titledisplayframeintab,text="Submit").grid(row=15,column=5)
+btnupdate=Button(titledisplayframeintab,text="Submit",command=updatefun).grid(row=15,column=5)
+
+msgs=dbcon.Mydbconnection()
+lblConMsg=Label(titledisplayframeintab, text=msgs)
+lblConMsg.grid(row=15,column=2, pady=20)
 
 titledisplayframeintab=Frame(tabDelete,width=win.winfo_screenwidth(), height=win.winfo_screenheight())
 titledisplayframeintab.pack()
@@ -194,13 +221,13 @@ lbl_updateTitle=Label(titledisplayframeintab, text="Deleting Student Details")
 lablename=Label(titledisplayframeintab,text="Student_Name")
 lablename.grid(row=2,column=1)
 
-name=Entry(titledisplayframeintab,width=10)
-name.grid(row=2,column=2)
+name4=Entry(titledisplayframeintab,width=10)
+name4.grid(row=2,column=2)
 
-btndelete=Button(titledisplayframeintab,text="Submit").grid(row=15,column=5)
+btndelete=Button(titledisplayframeintab,text="Submit",command=deletefun).grid(row=15,column=5)
 
-msg=dbcon.Mydbconnection()
-lblConMsg=Label(titledisplayframeintab, text=msg)
-lblConMsg.grid(row=8,column=2, pady=20)
+msgsg=dbcon.Mydbconnection()
+lblConMsg=Label(titledisplayframeintab, text=msgsg)
+lblConMsg.grid(row=15,column=2, pady=20)
 
 win.mainloop()

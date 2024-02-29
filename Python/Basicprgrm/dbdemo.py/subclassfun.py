@@ -31,3 +31,36 @@ class DBManipulate():
         data.commit()
 
         return (str(result.rowcount) + " row inserted")
+    
+    def updatevalues(self,st_name,tamil):  
+        Name=st_name
+        Tamil=tamil
+      
+        data1=self.Mydbconnection()
+        result=data1.cursor()
+
+        statement="update Student_details set Name = ("+'"'+Name+'"'+") where Sno = ("+str(Tamil)+") ;"
+        result.execute(statement)
+        print(statement)
+
+       
+        data1.commit()
+
+        return (str(result.rowcount) + " row updated")
+    
+    
+    def deletevalues(self,st_name):  
+        
+        Name=st_name
+        data2=self.Mydbconnection()
+        result=data2.cursor()
+
+        statement="delete from Student_details where Name = ("+'"'+Name+'"'+") ;"
+        result.execute(statement)
+        print(statement)
+
+       
+        data2.commit()
+
+        return (str(result.rowcount) + " row deleted")
+    
