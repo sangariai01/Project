@@ -5,8 +5,8 @@ data={
     "Names":["San","Jaya","Kayal"]    
 }
 df=pd.DataFrame(data)
-print(df)
-# print(dir(df))
+# print(df)
+print(dir(df))
 # for x in dir(df):
 #     print(x)
 
